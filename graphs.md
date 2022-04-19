@@ -1,6 +1,6 @@
 # Graphs
 
-## Javascript Algorithms and Data Structures Masterclass by Colt Steel
+## Notes: Javascript Algorithms and Data Structures Masterclass by Colt Steel
 
 ### Graph Traversal
 
@@ -22,4 +22,54 @@
   - Visit the node's nieghbors
   - Continue visiting each neighbors' neighbors
 - Can be done recursively or iteratively
+- The order of results will differ iterative and recursive approaches
+  - Each version may start with a different neighbor, so the order of traversal is different
+  - One uses a stack, the other uses a queue
+  - Both are still depth first
 
+#### Recursive Approach
+
+- Uses helper function to traverse graph
+
+```JS
+dfsRecursive(startingVertex) {
+  let results = [];
+  let visited = {};
+  dfsRecursiveHelper(startingVertex);
+
+  dfsRecursiveHelper (vertex) {
+    if (!vertex) return;
+    results.push(vertex);
+    visited[vertex] = true;
+    vertex.adjacencyList.forEach(neighbor => {
+      if (!visited[vertex]) {
+      dfsRecursive(neighbor);
+      }
+    }
+  }
+return results;
+}
+```
+
+#### Iterative Approach
+
+```JS
+dfsIterative(start) {
+  let results = [];
+  let visited = {};
+  let stack = [start];
+  let vertex;
+  visited[start] = true;
+
+  while (stack.length) {
+   vertex = stack.pop();
+   results.push(vertex);
+   this.adjacencyList[vertex].forEach(neighbor => {
+    if (!visited[neighbor]) {
+      visited[neighbor] = true;
+      stack.push(neighbor);
+    }
+    })
+  } 
+}
+```
