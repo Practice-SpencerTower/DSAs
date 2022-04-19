@@ -62,14 +62,40 @@ dfsIterative(start) {
   visited[start] = true;
 
   while (stack.length) {
-   vertex = stack.pop();
-   results.push(vertex);
-   this.adjacencyList[vertex].forEach(neighbor => {
-    if (!visited[neighbor]) {
-      visited[neighbor] = true;
-      stack.push(neighbor);
-    }
+    vertex = stack.pop();
+    results.push(vertex);
+    this.adjacencyList[vertex].forEach(neighbor => {
+      if (!visited[neighbor]) {
+        visited[neighbor] = true;
+        stack.push(neighbor);
+      }
     })
   } 
+}
+```
+
+#### Breadth First
+
+- Can think of graphs in terms of “height” rather than “depth”
+- Visit all neighbors of a given node/vertex before visiting the next level of neighbors in the graph
+
+```JS
+bfs(start) {
+ let results = [];
+ let visited = {};
+ let queue = [start];
+ let vertex;
+ visited[start] = true;
+
+  while (queue.length) {
+    vertex = queue.shift();
+    results.push(vertex);
+    this.adjacencyList[vertex].forEach(neighbor => {
+      if (!visited[neighbor]) {
+        visited[neighbor] = true;
+        queue.push(neighbor);
+      }
+    })
+  }
 }
 ```
