@@ -4,7 +4,7 @@
 
 ### Graph Traversal
 
-- It is important to understand how to visit every node via traversal before learning how to find a closest node in the graph
+- It is important to understand how to visit every node via traversal before learning how to find a closest node in a graph
 
 #### Graph vs Tree Traversal
 
@@ -22,7 +22,7 @@
   - Visit the node's nieghbors
   - Continue visiting each neighbors' neighbors
 - Can be done recursively or iteratively
-- The order of results will differ iterative and recursive approaches
+- The order of results will differ between iterative and recursive approaches
   - Each version may start with a different neighbor, so the order of traversal is different
   - One uses a stack, the other uses a queue
   - Both are still depth first
@@ -33,17 +33,19 @@
 
 ```JS
 dfsRecursive(startingVertex) {
-  let results = [];
-  let visited = {};
+  const results = [];
+  const visited = {};
+  const adjacencyList = this.adjacencyList;
+
   dfsRecursiveHelper(startingVertex);
 
   dfsRecursiveHelper (vertex) {
-    if (!vertex) return;
-    results.push(vertex);
+    if (!vertex) return null;
     visited[vertex] = true;
-    vertex.adjacencyList.forEach(neighbor => {
-      if (!visited[vertex]) {
-      dfsRecursive(neighbor);
+    results.push(vertex);
+    adjacencyList[vertex].forEach(neighbor => {
+      if (!visited[neighbor]) {
+        return dfsRecursiveHelper(neighbor);
       }
     }
   }
@@ -55,12 +57,12 @@ return results;
 
 ```JS
 dfsIterative(start) {
-  let results = [];
-  let visited = {};
-  let stack = [start];
+  const stack = [start];
+  const results = [];
+  const visited = {};
   let vertex;
-  visited[start] = true;
 
+  visited[start] = true;
   while (stack.length) {
     vertex = stack.pop();
     results.push(vertex);
@@ -70,7 +72,8 @@ dfsIterative(start) {
         stack.push(neighbor);
       }
     })
-  } 
+  }
+  return results;
 }
 ```
 
@@ -81,12 +84,12 @@ dfsIterative(start) {
 
 ```JS
 bfs(start) {
- let results = [];
- let visited = {};
- let queue = [start];
- let vertex;
- visited[start] = true;
+  const queue = [start];
+  const results = [];
+  const visited = {};
+  let vertex;
 
+  visited[start] = true;
   while (queue.length) {
     vertex = queue.shift();
     results.push(vertex);
@@ -97,5 +100,6 @@ bfs(start) {
       }
     })
   }
+  return results;
 }
 ```
