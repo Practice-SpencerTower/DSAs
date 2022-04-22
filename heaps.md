@@ -1,5 +1,7 @@
 # Heaps
 
+## Notes: Javascript Algorithms and Data Structures Masterclass by Colt Steel
+
 - A category of trees
 - What applies to trees applies to heaps
 - Many types of heaps

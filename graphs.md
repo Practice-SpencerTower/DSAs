@@ -2,11 +2,11 @@
 
 ## Notes: Javascript Algorithms and Data Structures Masterclass by Colt Steel
 
-### Graph Traversal
+## Graph Traversal
 
 - It is important to understand how to visit every node via traversal before learning how to find a closest node in a graph
 
-#### Graph vs Tree Traversal
+### Graph vs Tree Traversal
 
 - Trees are a special sub-set of a graph
 - With trees, there is only one path to a given node
@@ -14,7 +14,7 @@
 - Tree traversal begins at the root node
 - For graphs you must specify the starting point which can be any node in the graph
 
-#### Depth First Graph Traversal
+### Depth First Graph Traversal
 
 - No clear "depth" for a graph (unlike a tree structure)
 - Pass a starting node into the traversal function
@@ -27,7 +27,7 @@
   - One uses a stack, the other uses a queue
   - Both are still depth first
 
-#### Recursive Approach
+### Recursive Approach
 
 - Uses helper function to traverse graph
 
@@ -53,7 +53,7 @@ return results;
 }
 ```
 
-#### Iterative Approach
+### Iterative Approach
 
 ```JS
 dfsIterative(start) {
@@ -77,7 +77,7 @@ dfsIterative(start) {
 }
 ```
 
-#### Breadth First
+### Breadth First
 
 - Can think of graphs in terms of “height” rather than “depth”
 - Visit all neighbors of a given node/vertex before visiting the next level of neighbors in the graph
