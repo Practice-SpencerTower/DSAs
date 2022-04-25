@@ -85,7 +85,68 @@ function validAnagram(str1, str2) {
 }
 ```
 
-## Multiple Pointer
+## Multiple Pointers
+
+- Creating poiners/values that correspond to an index position
+- Move towards the beginning, end, or middle, depending on a certain condition
+- Very efficient for solving problems with minimal space complexity
+
+Example 1: Two Pointers Starting on Opposite Ends
+
+- Write a function called sumZero:
+  - Accepts a sorted array of integers
+  - The function should find the first pair where the sum is 0
+  - Return an array that includes both values that sum to zero of undefined if a pair does not exist
+
+Solution:
+
+```JS
+function sumZero(array) {
+    let left = 0;
+    let right = array.length - 1;
+    while (left < right) {
+        let sum = array[left] + array[right];
+        if (sum === 0) {
+            return [array[left], array[right]];
+        } else if (sum > 0) {
+            right --;
+        } else {
+            left ++;
+        }
+    }
+}
+```
+
+- Big O:
+  - Time Complexity: O(n)
+  - Space Complexity: O(1)
+
+Example 2: Two Pointers Starting at the Same End
+
+- Implement a function called countUniqueValues:
+  - Accepts a sorted array
+  - Counts the unique values in the array
+  - There can be negative numbers in the array
+  - The array will always be sorted
+
+Solution:
+
+```JS
+    function countUniqueValues(array) {
+        if (!array.length) return 0;
+        let i = 0;
+        let uniqueValues;
+        for (let j = 1; j < array.length; j++) {
+            if (array[i] !== array[j]) {
+                i ++;
+                array[i] = array[j];
+            }
+        };
+        // i is equal to the number of unique values
+        // add 1 becuase i starts at index 0
+        return i + 1;
+    };
+```
 
 ## Sliding Window
 
