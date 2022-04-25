@@ -10,7 +10,7 @@
 - Uses while loop to remove nodes from the queue
 - After a node is removed from the queue it is added to the results array
 - Then check to see if the current node has children
-  - If so then add them to the queue
+  - If so add them to the queue
 
 ```JS
 function bfs(root) {
