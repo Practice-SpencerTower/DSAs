@@ -152,7 +152,40 @@ Solution:
 
 - Creating a window which can be an array or number from one position to another
 - Window increases or closes (and a new window is created), depending on a condition
-- Useful for tracking a subset of data in an array or string
+- Useful when we are looking for a subset of data that is continuous in an array or string
+- Eg finding the longest sequence of unique characters in a string
+- Eg finding the maxSubarraySum
+
+Example 1:
+
+- Write a function called maxSubarraySum
+  - Accepts an array of integers and a number n
+  - The function should calculate the maximum sum of n consecutive elements in the array
+
+- Keep a running total of the window sum
+- To shift the window:
+  - Subtract the first number of the window from the running total
+  - Add the next number outside of the window
+
+Solution:
+
+```JS
+    function maxSubarraySum(arr, num) {
+        let maxSum = 0;
+        let tempSum = 0;
+        if (arr.length < num) return null;
+        // create initial window
+        for (let i = 0; i < num; i++) {
+            maxSum += arr[i];
+        }
+        tempSum = maxSum;
+        for (let i = num; i < arr.length; i++) {
+            tempSum = tempSum - arr[i - num] + arr[i];
+            maxSum = Math.max(maxSum, tempSum);
+        }
+        return maxSum;
+    }
+```
 
 ## Divide and Conquer
 
