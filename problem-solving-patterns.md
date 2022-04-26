@@ -150,6 +150,10 @@ Solution:
 
 ## Sliding Window
 
+- Creating a window which can be an array or number from one position to another
+- Window increases or closes (and a new window is created), depending on a condition
+- Useful for tracking a subset of data in an array or string
+
 ## Divide and Conquer
 
 ## Dynamic Programming
