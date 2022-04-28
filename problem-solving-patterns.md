@@ -191,6 +191,9 @@ Big O: O(n)
 
 ## Divide and Conquer
 
+- Divide a larger chunk of data (e.g. an array) into smaller chunks
+  - Example: Binary Search
+
 ## Dynamic Programming
 
 ## Greedy Algorithm
