@@ -162,12 +162,14 @@ Example 1:
   - Accepts an array of integers and a number n
   - The function should calculate the maximum sum of n consecutive elements in the array
 
+Solution:
+
 - Keep a running total of the window sum
 - To shift the window:
   - Subtract the first number of the window from the running total
   - Add the next number outside of the window
 
-Solution:
+Big O: O(n)
 
 ```JS
     function maxSubarraySum(arr, num) {
