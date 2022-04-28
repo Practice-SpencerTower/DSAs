@@ -22,8 +22,12 @@
 
 - Allows you to collect values in a data structure without a helper function (not necessarily better than using a helper function, just a different way to do it)
 - Function is self-contained and recursively calls itself
+- Arrays: When working with arrays, use `slice`, `spread operator`, and `concat` methods to make copies of the array so you do not mutate them
+- Strings: Strings are immutable so use methods like `slice`, `substr`, and `substring` to make copies of them
+- Objects: To make copies of objects, use `Object.assign` or the `spread operator`
 - Example using an array:
-  - Concatinate the result of the recursive call onto the rest of the array
+  - Concatenate the result of the recursive call onto the rest of the array
+    - Does not re-assign the array
 
 ```JS
 function collectOddValues(arr){
