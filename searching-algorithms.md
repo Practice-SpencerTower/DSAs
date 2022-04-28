@@ -15,33 +15,32 @@
 - Set left and right pointers to first and last indices of array
 - If pivot > value, search left half
   - change right pionter to be pivot - 1
+  - reassign pivot
 - If pivot < value, search right half
   - change left pionter to be pivot + 1
+  - reassign pivot
 
 ```JS
-    function binarySearch(arr, val) {
-        let pivot = Math.floor((arr.length -1)/2);
-        let left = 0;
-        let right = arr.length -1;
-        
-        while (true) {
-            if (arr[pivot] === val) {
-                return pivot;
-            }
-            // if not found
-            if (left === right && left === pivot) {
-                return;
-            }
-            // search right half
-            if (arr[pivot] < val) {
-                left = pivot + 1;
-                pivot = Math.floor((right + left)/2)
-            }
-            // search left half
-            if (arr[pivot] > val) {
-                right = pivot - 1;
-                pivot = Math.floor((right + left)/2)
-            }
+function binarySearch(arr, val) {
+    let left = 0;
+    let right = arr.length - 1;
+    let pivot = Math.floor((right + left) / 2);
+
+    while (left <= right) {
+        if (arr[pivot] === val) {
+            return pivot};
+        }
+        // search right half
+        if (arr[pivot] < val) {
+            left = pivot + 1;
+            pivot = Math.floor((right + left) / 2)
+        }
+        // search left half
+        if (arr[pivot] > val) {
+            right = pivot - 1;
+            pivot = Math.floor((right + left) / 2)
         }
     }
+    return -1;
+}
 ```
