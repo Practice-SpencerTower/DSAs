@@ -193,6 +193,10 @@ Big O: O(n)
 
 - Divide a larger chunk of data (e.g. an array) into smaller chunks
   - Example: Binary Search
+  - Check middle of array
+    - Is middle value greater or less than the value we are searching for?
+    - If the middle value is greater, search the left half of the array
+    - If the middle value is less, search the right half of the array
 
 ## Dynamic Programming
 
