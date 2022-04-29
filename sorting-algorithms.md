@@ -47,9 +47,12 @@ function bubbleSort(arr) {
 - Swapping takes place once the array has been iterated through
 - Swap the first element with the smallest
 - Go to next element in array
+- Less efficient than bubble sort
+
+- Big O:
+  - Time Complexity: O(n^2)
 
 ```JS
-
 function selectionSort(arr) {
     let temp;
     for (let i = 0; i < arr.length; i++) {

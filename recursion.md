@@ -2,6 +2,8 @@
 
 ## Notes: Javascript Algorithms and Data Structures Masterclass by Colt Steel
 
+- Recursion requires memory in the form of function calls on the call stack
+
 ## Common Recursion Pitfalls
 
 - Not having a base case
