@@ -43,6 +43,32 @@ function bubbleSort(arr) {
 
 ## Selection Sort
 
+- Find smallest number, place it at beginning of the array
+- Swapping takes place once the array has been iterated through
+- Swap the first element with the smallest
+- Go to next element in array
+
+```JS
+
+function selectionSort(arr) {
+    let temp;
+    for (let i = 0; i < arr.length; i++) {
+        let lowest = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[lowest]) {
+                lowest = j;
+            }
+        }
+        if (i !== lowest) {
+            temp = arr[i];
+            arr[i] = arr[lowest];
+            arr[lowest] = temp;
+        }
+    }
+    return arr;
+}
+```
+
 ## Insertion Sort
 
 - Optimal when data is nearly sorted
