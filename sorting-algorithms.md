@@ -20,7 +20,24 @@ Can specify how the sort method should compare values:
 
 ```JS
 function bubbleSort(arr) {
-    
+    let numsPlaced = 0
+    let isSorted = false;
+    let temp;
+    while (!isSorted) {
+        isSorted = true;
+        let i = 0;
+        for (let j = 1; j < arr.length - numsPlaced; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                isSorted = false;
+            }
+            i++;
+        }
+        numsPlaced++;
+    }
+    return arr;
 }
 ```
 
