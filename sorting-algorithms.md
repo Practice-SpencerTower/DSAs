@@ -75,3 +75,6 @@ function selectionSort(arr) {
 ## Insertion Sort
 
 - Optimal when data is nearly sorted
+- Builds up the sort by gradually creating a larger left half, which is always sorted
+- Unsorted elements are sorted into the left half of the array
+- Taking each element and inserting it in the correct spot in the left half of the array
