@@ -3,6 +3,7 @@
 ## Notes: Javascript Algorithms and Data Structures Masterclass by Colt Steel
 
 - Sorting is a common task
+- Bubble, Selection, Insertion Sorts are all quadratic
 - Important to know what algorithms methods are using
 - May want to implement your own sort rather than relying on one that is built-in
 - Worth understanding the pros and cons
@@ -17,6 +18,12 @@ Can specify how the sort method should compare values:
   - If if returns 0, a and b are the same
 
 ## Bubble Sort
+
+- Works best with nearly sorted data
+  - O(n)
+- Big O:
+  - Time: O(n^2)
+  - Space: O(1)
 
 ```JS
 function bubbleSort(arr) {
@@ -50,7 +57,8 @@ function bubbleSort(arr) {
 - Less efficient than bubble sort
 
 - Big O:
-  - Time Complexity: O(n^2)
+  - Time: O(n^2)
+  - Space: O(1)
 
 ```JS
 function selectionSort(arr) {
@@ -75,6 +83,28 @@ function selectionSort(arr) {
 ## Insertion Sort
 
 - Optimal when data is nearly sorted
+  - O(n)
+- Or if data is continually being added to the data structure
+  - To maintain a 'running sort'
 - Builds up the sort by gradually creating a larger left half, which is always sorted
 - Unsorted elements are sorted into the left half of the array
 - Taking each element and inserting it in the correct spot in the left half of the array
+
+- Big O:
+  - Time: O(n^2) quadratic
+  - Space: O(1)
+
+```JS
+function insertionSort(arr) {
+
+    for (let i = 1; i < arr.length; i++) {
+        let current = arr[i];
+        for (let j = i - 1; j >= 0 && arr[j] > current; j--) {
+            arr[j + 1] = arr[j];
+            console.log(arr);
+        }
+        arr[j + 1] = current;
+    }
+    return arr;
+}
+```

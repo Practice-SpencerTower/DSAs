@@ -7,6 +7,7 @@
 1. [Sorting Algorithms](sorting-algorithms.md)
 1. [Recursion](recursion.md)
 1. [Binary Trees](binary-trees.md)
+1. [Binary Search Trees](binary-search-trees.md)
 1. [Graphs](graphs.md)
 1. [Heaps](heaps.md)
 
