@@ -113,11 +113,11 @@ function insertionSort(arr) {
 
 Insertion Sort
 
-- Not the most performant
-- Creating space at beginning of the list to tentatively be the sorted section of the array
+- Not the most performant algorithm
+- Sorts array in-place
+- Creating a "space" at beginning of the array to tentatively be the sorted section of the array
 - Iterate through rest of the array
-- For each number, find its place in the sorted section and insert it for that number in the sorted section of the array
-  - For each number in the sorted section, compare to current number starting with the largest number of the sorted list
-  - If numbers are equal, no need to swap or continue checking
-- Find smallest number and move it to the beginning of the array
-- Opposite of Bubble Sort
+- For each element, find its place in the sorted section and insert it for that element in the sorted section of the array
+  - For each element in the sorted section, compare to current element starting with the largest element of the sorted list
+  - If elements are equal, no need to swap or continue checking
+- Find smallest element and moves it to the beginning of the array
