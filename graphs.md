@@ -68,8 +68,8 @@ dfsIterative(start) {
     results.push(vertex);
     this.adjacencyList[vertex].forEach(neighbor => {
       if (!visited[neighbor]) {
-        visited[neighbor] = true;
         stack.push(neighbor);
+        visited[neighbor] = true;
       }
     })
   }
