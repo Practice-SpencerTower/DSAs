@@ -41,17 +41,39 @@ class DoublyLinkedList {
         this.length--;
         return poppedNode;
     }
+    shift() {
+        if (!this.length) return undefined;
+        let oldHead = this.head;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = oldHead.next;
+            oldHead.next.prev = null;
+            oldHead.next = null;
+        }
+        this.length--;
+        return oldHead;
+    }
+    unshift(val) {
+        let newNode = new Node(val);
+        if (!this.length) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.next = this.head;
+            newNode.next.prev = newNode;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
 }
 
-// let firstNode = new Node(14);
-// firstNode.next = new Node(5);
-// firstNode.next.prev = firstNode;
-// console.log('firstNode', firstNode);
 let newList = new DoublyLinkedList();
 newList.push('firstNode');
 newList.push('secondNode');
 newList.push('thirdNode');
 newList.push('fourthNode');
-console.log('poppedNode1', newList.pop());
-console.log('poppedNode2', newList.pop());
+newList.unshift('fifthNode');
 console.log('UPDATED LIST: ', newList);
