@@ -9,6 +9,7 @@
   - Class syntax is "syntactic sugar" over JS's existing prototype-based inheritance
   - The "class" keyword basically allows you to implement OOP in JS
   - "constructor" method assigns values to the new instance
+  - Class instances are created with the "new" keyword
   - Instance methods
     - Used to add functionality to instances of a class
   - Class methods
