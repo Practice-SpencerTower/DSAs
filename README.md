@@ -9,6 +9,7 @@
 1. [Quick Sort](quick-sort.md)
 1. [Data Structure Notes](data-structure-notes.md)
 1. [Singly Linked Lists](singly-linked-lists.md)
+1. [Doubly Linked Lists](doubly-linked-lists.md)
 1. [Recursion](recursion.md)
 1. [Binary Trees](binary-trees.md)
 1. [Binary Search Trees](binary-search-trees.md)
