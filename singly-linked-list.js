@@ -141,5 +141,3 @@ newList.push("secondNode");
 newList.push("thirdNode");
 newList.push("fourthNode");
 console.log('linked list: ', newList);
-newList.reverse();
-console.log('reversed list', newList);
