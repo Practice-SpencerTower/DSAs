@@ -7,12 +7,16 @@
 - Takes advantage of fact that arrays that have 0 or 1 elements are always sorted
 - Works by breaking an array down into smaller sub-arrays until we get to single element arrays
 
-- Big O:
+- Big O of merge:
   - Time: O(n + m)
   - Space: O(n + m)
   - O(n + m) becuase there are two input arrays into the merge sort function
   - n = size of first array
   - m = size of second array
+
+- Big O of mergeSort:
+  - Time: O(n log n)
+  - Space: O(n)
 
 ```JS
 [8, 3, 5, 4, 7, 6, 1, 2]
