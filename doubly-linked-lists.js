@@ -89,6 +89,13 @@ class DoublyLinkedList {
             return current;
         }
     }
+    set(val, index) {
+        let foundNode = this.get(index);
+        if (foundNode != null) {
+            foundNode.val = val;
+        }
+        return this;
+    }
 }
 
 let newList = new DoublyLinkedList();
@@ -97,6 +104,5 @@ newList.push('secondNode');
 newList.push('thirdNode');
 newList.push('fourthNode');
 newList.push('fifthNode');
-let returnedNode = newList.get(2);
-console.log('RETURNED NODE: ', returnedNode);
+newList.set('5thNode', 4);
 console.log('UPDATED LIST: ', newList);
