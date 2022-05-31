@@ -14,7 +14,7 @@ class SinglyLinkedList {
         this.length = 0;
     }
     push(val) {
-        const newNode = new Node(val);
+        let newNode = new Node(val);
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
@@ -56,7 +56,7 @@ class SinglyLinkedList {
     }
     unshift(val) {
         // add node to beginning of list
-        const newNode = new Node(val);
+        let newNode = new Node(val);
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
@@ -69,7 +69,7 @@ class SinglyLinkedList {
     }
     get(index) {
         if (this.length < index) return null;
-        let count = 1;
+        let count = 0;
         let current = this.head;
         while (count !== index) {
             current = current.next;
@@ -85,6 +85,17 @@ class SinglyLinkedList {
             foundNode.val = val;
         }
         return this;
+    }
+    insert(val, index) {
+        let newNode = new Node(val);
+        if (index < 0 || index > this.length) return false;
+        if (index === this.length) return !!this.push(val);
+        if (index === 0) return !!this.unshift(val);
+
+        let previous = this.get(index - 1);
+        newNode.next = previous.next;
+        previous.next = newNode;
+        return true;
     }
 }
 
