@@ -17,3 +17,11 @@
     - get - returns node at given index
     - set - adds node at given index
   
+  - Big O:
+    - Insertion - O(1)
+    - Removal - O(1) or O(n)
+      - Depends on where in the list you are removing from
+      - Removing from beginning - O(1)
+      - Removing from end - O(n)
+    - Searching - O(n)
+    - Access - O(n)
