@@ -98,9 +98,9 @@ class DoublyLinkedList {
         return false;
     }
     insert(val, index) {
-        if (index < 0 || index > this.length) return false;
-        if (index === 0) return this.unshift(val);
-        if (index === this.length - 1) return this.push(val);
+        if (index < 0 || index >= this.length) return false;
+        if (index === 0) return !!this.unshift(val);
+        if (index === this.length - 1) return !!this.push(val);
 
         let newNode = new Node(val);
         let prevNode = this.get(index - 1);
@@ -112,6 +112,20 @@ class DoublyLinkedList {
         this.length++;
         return true;
     }
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined;
+        if (index === 0) return this.shift();
+        if (index === this.length - 1) return this.pop();
+        
+        let removed = this.get(index);
+        removed.prev.next = removed.next;
+        removed.next.prev = removed.prev;
+
+        removed.prev = null;
+        removed.next = null;
+        this.length--;
+        return removed;
+    }
 }
 
 let newList = new DoublyLinkedList();
@@ -120,5 +134,5 @@ newList.push('secondNode');
 newList.push('thirdNode');
 newList.push('fourthNode');
 newList.push('fifthNode');
-newList.insert('InsertedNode', 1);
+console.log('REMOVED NODE: ', newList.remove(2));
 console.log('UPDATED LIST: ', newList);
