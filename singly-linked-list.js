@@ -117,6 +117,22 @@ class SinglyLinkedList {
         this.length--;
         return removed;
     }
+    reverse() {
+        if (!this.head) return null;
+        this.tail = this.head;
+        let previous = null;
+        let current = this.head;
+        let next;
+        while (current.next) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        current.next = previous;
+        this.head = current;
+        return this;
+    }
 }
 
 let newList = new SinglyLinkedList();
@@ -125,3 +141,5 @@ newList.push("secondNode");
 newList.push("thirdNode");
 newList.push("fourthNode");
 console.log('linked list: ', newList);
+newList.reverse();
+console.log('reversed list', newList);
