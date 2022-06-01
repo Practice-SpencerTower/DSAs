@@ -8,6 +8,7 @@
     - No random access
   - Each element points to the next one
   - Have to start at the beginning of the list and traverse to get to a specific value in the list
+  - Main advantage over arrays is that the time complexity of adding to the beginning of the list is constant time, whereas adding to the beginning of an array is linear time
   - Good alternative to arrays when insertion and deletion at beginning of list are frequently required
 
   - Methods:

@@ -13,6 +13,26 @@
     - Routing (the history object of a browser) operates like a stack
   - More than one way to implement a stack
     - E.g. can be created with an array or linked list
+  - Methods:
+    - Pop - behaves like shift
+    - Push - behaves like unshift
+
+- Stacks Big O:
+  - Insertion - O(1)
+    - Uses shift/unshift
+  - Removal - O(1)
+  - Searching - O(n)
+  - Access - O(n)
 
 - Queues:
   - FIFO - First in first out
+  - Like waiting in line
+  - Use cases:
+    - Online wait rooms
+    - Background tasks
+    - Uploading resources
+    - Printing queue / task processing
+  - Can be implemented with an array or a linked list
+  - Methods:
+    - Enqueue - adds node to beginning, behaves like push
+    - Dequeue - removes node from end, behaves like shift

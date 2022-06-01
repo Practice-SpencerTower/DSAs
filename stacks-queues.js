@@ -21,32 +21,66 @@ class Node {
 }
 class Stack {
     constructor() {
-        this.head = null;
-        this.tail = null;
+        this.first = null;
+        this.last = null;
         this.length = 0;
     }
     push (val) {
-        // use shift/unshift
+        // behaves like unshift
         // faster with ll than push/pop
         let newNode = new Node(val);
         if (!this.length) {
-            this.head = newNode;
-            this.tail = newNode;
+            this.first = newNode;
+            this.last = newNode;
         } else {
-            newNode.next = this.head;
-            this.head = newNode;
+            newNode.next = this.first;
+            this.first = newNode;
         }
         this.length++;
         return this;
     }
     pop () {
+        // behaves like shift
         if (!this.length) return undefined;
-        let removedNode = this.head;
-        this.head = this.head.next;
+        let removedNode = this.first;
+        this.first = this.first.next;
         removedNode.next = null;
         this.length--;
         if (!this.length) {
-            this.tail = null;
+            this.last = null;
+        }
+        return removedNode;
+    }
+}
+
+class Queue {
+    constructor() {
+        this.first = null;
+        this.last = null;
+        this.length = 0;
+    }
+    enqueue(val) {
+        // behaves like push
+        let newNode = new Node(val);
+        if (!this.length) {
+            this.first = newNode;
+            this.last = newNode;
+        } else {
+            this.last.next = newNode;
+            this.last = newNode;
+        }
+        this.length++;
+        return this;
+    }
+    dequeue() {
+        // behaves like shift
+        if (!this.length) return undefined;
+        let removedNode = this.first;
+        this.first = this.first.next;
+        removedNode.next = null;
+        this.length--;
+        if (!this.length) {
+            this.last = null;
         }
         return removedNode;
     }
@@ -57,11 +91,16 @@ newStack.push("firstNode");
 newStack.push("secondNode");
 newStack.push("thirdNode");
 newStack.push("fourthNode");
-console.log('popped node', newStack.pop());
-console.log('popped node', newStack.pop());
-console.log('popped node', newStack.pop());
-console.log('popped node', newStack.pop());
-console.log('linked Stack: ', newStack);
+let newQueue = new Queue();
+newQueue.enqueue("firstNode");
+newQueue.enqueue("secondNode");
+newQueue.enqueue("thirdNode");
+newQueue.enqueue("fourthNode");
+console.log(newQueue.dequeue());
+console.log(newQueue.dequeue());
+console.log(newQueue.dequeue());
+console.log(newQueue.dequeue());
+console.log('Updated Queue: ', newQueue);
 
 
 
