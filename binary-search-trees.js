@@ -105,6 +105,4 @@ tree.insert(10);
 tree.insert(15);
 tree.insert(7);
 tree.insert(9);
-console.log('PreOrder: ', tree.DFSPreOrder());
-console.log('InOrder: ', tree.DFSInOrder());
-console.log('PostOrder', tree.DFSPostOrder());
+console.log(treeify.asTree(tree), true);
