@@ -26,29 +26,29 @@ class Stack {
         this.length = 0;
     }
     push (val) {
+        // use shift/unshift
+        // faster with ll than push/pop
         let newNode = new Node(val);
         if (!this.length) {
             this.head = newNode;
             this.tail = newNode;
         } else {
-            this.tail.next = newNode;
-            this.tail = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
         }
         this.length++;
         return this;
     }
     pop () {
         if (!this.length) return undefined;
-        let current = this.head;
-        let newTail = current;
-        while (current.next) {
-            newTail = current;
-            current = current.next;
-        }
-        newTail.next = null;
-        this.tail = newTail;
+        let removedNode = this.head;
+        this.head = this.head.next;
+        removedNode.next = null;
         this.length--;
-        return current;
+        if (!this.length) {
+            this.tail = null;
+        }
+        return removedNode;
     }
 }
 
@@ -57,6 +57,9 @@ newStack.push("firstNode");
 newStack.push("secondNode");
 newStack.push("thirdNode");
 newStack.push("fourthNode");
+console.log('popped node', newStack.pop());
+console.log('popped node', newStack.pop());
+console.log('popped node', newStack.pop());
 console.log('popped node', newStack.pop());
 console.log('linked Stack: ', newStack);
 
