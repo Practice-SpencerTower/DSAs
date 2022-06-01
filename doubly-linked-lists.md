@@ -5,6 +5,7 @@
 - Each node has a pointer to the previous node
 - Some operations need to be different from singly linked lists
   - E.g. removing the last node of the list - can go directly to the tail, remove it, and set the previous node as the new tail
+- Faster at finding nodes than singly linked lists
 - More flexibility than singly linked lists but takes up more memory
 
 - Big O:
