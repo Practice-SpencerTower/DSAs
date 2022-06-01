@@ -39,9 +39,8 @@
 
 ### Depth First Search
 
-- Independent of BSTs
-- Applicable to trees in general
 - 3 types of DFS:
+  - Recursive traversal is easiest approach
   - In-Order - traverse left side, root, right side
   - Pre-Order
   - Post-Order
@@ -59,3 +58,9 @@
     - Add node to the visited array
     - Check to see if the current node has children
       - If so add them to the queue
+
+- When to use different searches:
+  - Wide trees - BFS may take up more space
+  - Deep trees - DFS may take up more space
+  - PreOrder - can be used to export a tree structre with an order to later reconstruct the tree
+    - immediately know the root of the tree
