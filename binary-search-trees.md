@@ -64,3 +64,4 @@
   - Deep trees - DFS may take up more space
   - PreOrder - can be used to export a tree structre with an order to later reconstruct the tree
     - immediately know the root of the tree
+  - InOrder, PreOrder, PostOrder all easily interchangable
