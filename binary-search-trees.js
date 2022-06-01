@@ -41,6 +41,7 @@ class BinarySearchTree {
     }
     find (val) {
         if (!this.root) return undefined;
+        let found = false;
         let current = this.root;
         while (current && !found) {
             if (val < current.val) {
@@ -53,6 +54,50 @@ class BinarySearchTree {
         }
         return false;
     }
+    BFS () {
+        let node = this.root;
+        let visited = [];
+        let queue = [];
+        queue.push(node);
+
+        while(queue.length) {
+            node = queue.shift();
+            visited.push(node);
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+        }
+        return visited;
+    }
+    DFSPreOrder () {
+        let visited = [];
+        function traverse(node) {
+            visited.push(node);
+            if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
+        }
+        traverse(this.root);
+        return visited;
+    }
+    DFSInOrder () {
+        let visited = [];
+        function traverse(node) {
+            if (node.left) traverse(node.left);
+            visited.push(node);
+            if (node.right) traverse(node.right);
+        }
+        traverse(this.root);
+        return visited;
+    }
+    DFSPostOrder () {
+        let visited = [];
+        function traverse(node) {
+            if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
+            visited.push(node);
+        }
+        traverse(this.root);
+        return visited;
+    }
 }
 
 let tree = new BinarySearchTree();
@@ -60,5 +105,6 @@ tree.insert(10);
 tree.insert(15);
 tree.insert(7);
 tree.insert(9);
-console.log(treeify.asTree(tree, true));
-console.log('Val found: ', tree.find(10));
+console.log('PreOrder: ', tree.DFSPreOrder());
+console.log('InOrder: ', tree.DFSInOrder());
+console.log('PostOrder', tree.DFSPostOrder());

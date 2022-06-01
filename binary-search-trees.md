@@ -42,7 +42,7 @@
 - Independent of BSTs
 - Applicable to trees in general
 - 3 types of DFS:
-  - In-Order
+  - In-Order - traverse left side, root, right side
   - Pre-Order
   - Post-Order
 
