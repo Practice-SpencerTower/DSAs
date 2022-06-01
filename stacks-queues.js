@@ -34,8 +34,21 @@ class Stack {
             this.tail.next = newNode;
             this.tail = newNode;
         }
-        length++;
+        this.length++;
         return this;
+    }
+    pop () {
+        if (!this.length) return undefined;
+        let current = this.head;
+        let newTail = current;
+        while (current.next) {
+            newTail = current;
+            current = current.next;
+        }
+        newTail.next = null;
+        this.tail = newTail;
+        this.length--;
+        return current;
     }
 }
 
@@ -44,6 +57,7 @@ newStack.push("firstNode");
 newStack.push("secondNode");
 newStack.push("thirdNode");
 newStack.push("fourthNode");
+console.log('popped node', newStack.pop());
 console.log('linked Stack: ', newStack);
 
 
