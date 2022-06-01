@@ -25,11 +25,37 @@
   - Folders in an OS
   - Computer file systems
 
-## BST Traversal - 
+- BST Methods Big O:
+  - Insertion - O(log n)
+  - Searching - O(log n)
+    - Each search/insertion operation potentially cuts the tree in half
+    - As size of tree doubles the number of operations only increases by 1
 
-- Uses a queue to track nodes to be visited
-- Uses while loop to remove nodes from the queue
-- After a node is removed from the queue it is added to the results array
-- Then check to see if the current node has children
-  - If so add them to the queue
+## General Tree Traversal Methods
 
+- Independent of BSTs
+- Applicable to trees in general
+- DFS and BFS
+
+### Depth First Search
+
+- Independent of BSTs
+- Applicable to trees in general
+- 3 types of DFS:
+  - In-Order
+  - Pre-Order
+  - Post-Order
+
+### Breadth First Search
+
+- Visits nodes level by level
+- Can be done iteratively or recursively
+
+- Iterative BFS:
+  - Queue - holds nodes to be visited
+  - Visited array - tracks nodes that have been visited
+  - While loop
+    - Remove node from the queue
+    - Add node to the visited array
+    - Check to see if the current node has children
+      - If so add them to the queue
