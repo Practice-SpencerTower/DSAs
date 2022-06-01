@@ -14,13 +14,14 @@
   - More than one way to implement a stack
     - E.g. can be created with an array or linked list
   - Methods:
-    - Pop - behaves like shift
     - Push - behaves like unshift
+    - Pop - behaves like shift
 
 - Stacks Big O:
   - Insertion - O(1)
-    - Uses shift/unshift
+    - push uses unshift
   - Removal - O(1)
+    - pop uses shift
   - Searching - O(n)
   - Access - O(n)
 
@@ -36,3 +37,11 @@
   - Methods:
     - Enqueue - adds node to beginning, behaves like push
     - Dequeue - removes node from end, behaves like shift
+
+- Queues Big O:
+  - Insertion - O(1)
+    - enqueue uses push
+  - Removal - O(1)
+    - dequeue uses shift
+  - Searching - O(n)
+  - Access - O(n)

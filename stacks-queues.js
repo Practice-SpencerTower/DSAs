@@ -96,10 +96,6 @@ newQueue.enqueue("firstNode");
 newQueue.enqueue("secondNode");
 newQueue.enqueue("thirdNode");
 newQueue.enqueue("fourthNode");
-console.log(newQueue.dequeue());
-console.log(newQueue.dequeue());
-console.log(newQueue.dequeue());
-console.log(newQueue.dequeue());
 console.log('Updated Queue: ', newQueue);
 
 
