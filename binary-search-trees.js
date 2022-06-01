@@ -21,7 +21,7 @@ class BinarySearchTree {
             if (val === current.val) return undefined;
             if (val < current.val) {
                 if (current.left) {
-                    current = current.left
+                    current = current.left;
                 } else {
                     current.left = newNode;
                     break;
@@ -39,6 +39,27 @@ class BinarySearchTree {
         }
         return this;
     }
+    find (val) {
+        if (!this.root) return undefined;
+        let current = this.root;
+        while (true) {
+            if (val === current.val) return true;
+            if (val < current.val) {
+                if (current.left) {
+                    current = current.left;
+                } else {
+                    return false;
+                }
+            }
+            if (val > current.val) {
+                if (current.right) {
+                    current = current.right;
+                } else {
+                    return false;
+                }
+            }
+        }
+    }
 }
 
 let tree = new BinarySearchTree();
@@ -47,3 +68,4 @@ tree.insert(15);
 tree.insert(7);
 tree.insert(9);
 console.log(treeify.asTree(tree, true));
+console.log('Val found: ', tree.find(10));
