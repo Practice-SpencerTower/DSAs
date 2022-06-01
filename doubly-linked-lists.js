@@ -134,5 +134,4 @@ newList.push('secondNode');
 newList.push('thirdNode');
 newList.push('fourthNode');
 newList.push('fifthNode');
-console.log('REMOVED NODE: ', newList.remove(2));
-console.log('UPDATED LIST: ', newList);
+console.log('LIST: ', newList);
