@@ -8,20 +8,25 @@
 
 ## Binary Heaps
 
-- Both child nodes must be less than that of the parent
-- Every child node is smaller than the root node
-- Binary - each parent has at least two child nodes
-- Left children are always filled out first
+- Binary - each parent has at most two child nodes
+- **Left children are always filled out first**
+- Max binary heap - parent is always larger than the children
+- Min binary heap - parent is always smaller than the children
 - No implied ordering/relationship between siblings (as you would see in a binary tree)
-- Useful for priority queues
-  - Assigns an importance level to each item in the queue
-- Often used to assist with graph traversal
+
+- Use Cases:
+  - Used to implement priority queues which are widely used
+    - Assigns an importance level to each item in the queue
+    - Moves to correct spot in the queue based on importance level
+  - Often used to assist with graph traversal
 
 ### Sorting Heaps
 
-- Multiply index of parent by 2 + 1 and 2 + 2 to find first and second child nodes
-- Formula: (n = parent index) 2n + 1 and 2n + 1
-- Find parent of child node:
+- The order of a binary heaps nodes can be represented in an array
+- Find the index of parents children:
+  - Multiply index of parent by 2 + 1 and 2 + 2 to find first and second child nodes
+  - Formula: (n = parent index) 2n + 1 and 2n + 1
+- Find the index of the parent of child nodes:
   - n = child node index
   - Math.floor((n -1) / 2) and Math.floor((n - 2) / 2)
 
