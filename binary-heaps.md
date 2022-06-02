@@ -30,7 +30,10 @@
   - n = child node index
   - Math.floor((n -1) / 2) and Math.floor((n - 2) / 2)
 
-### Insert Method
+### Adding to a Max Binary Heap
+
+- Have to add the node to the end of the heap and then "bubble up" to find its correct position
+- Bubbling up - process of comparing a child node to its parent and swapping to place the node correctly in the heap
 
 - Inserting a node into a Max Binary Heap
 - A class of the binary heap
@@ -40,3 +43,9 @@
   - Compare to parent, if child is larger, then swap
   - Continue until the correct place is found
     - Why its important to be able to find a parent based off of a child
+
+### Removing from a Max Binary Heap
+
+- Remove root / 
+- Replace root with most recently added node
+- Adjust/sink down/bubble-down to put nodes in correct order
