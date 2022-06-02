@@ -46,6 +46,18 @@
 
 ### Removing from a Max Binary Heap
 
-- Remove root / 
+- Remove root
 - Replace root with most recently added node
 - Adjust/sink down/bubble-down to put nodes in correct order
+
+### Priority Queues
+
+- Each element recieves a priority level
+- E.g. an emergency room queue
+- Highest priority becomes the room
+- Initially add the node to the end and then bubble up based on its priority level
+- Common use case for binary heaps
+- Independent from heaps - an abstract concept that can be implemented without a heap
+
+- Why use a binary heap for a priority queue?
+  - Both innsertion and removal have a time complexity of O(log n)

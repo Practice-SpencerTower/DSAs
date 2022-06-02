@@ -1,12 +1,4 @@
-// Binary Heaps
-
-class Node {
-    constructor(val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
-    }
-}
+// Max Binary Heap
 
 class MaxBinaryHeap {
     constructor() {
