@@ -11,7 +11,7 @@
 - Fast for finding, adding, removing values
   - O(1) lookup
 
-- Build in Hash Tables
+- Built in Hash Tables
   - JS - Objects and Maps
   - Python - Dictionaries
 
