@@ -35,3 +35,9 @@
   - Linear Probing:
     - Only store one piece of data in each position
     - If there is a collision, look forward to the next empty spot to put the data
+
+- Big O of Hash Tables:
+  - Insert - O(1)
+  - Deletion - O(1)
+  - Access - O(1)
+  - Depends how effective the hash function is at reducing collisions
