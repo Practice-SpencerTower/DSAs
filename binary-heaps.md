@@ -5,6 +5,7 @@
 - A category of trees
 - What applies to trees applies to heaps
 - Many types of heaps
+- Can be easily represented using arrays
 
 ## Binary Heaps
 
@@ -61,3 +62,11 @@
 
 - Why use a binary heap for a priority queue?
   - Both innsertion and removal have a time complexity of O(log n)
+
+### Big O
+
+- For both min and max binary heaps
+- Great for insertion and deletion
+- Insertion - O(log n)
+- Deletion - O(log n)
+- Left side is filled out first, each level of the binary heap is filled out before moving to the next level
