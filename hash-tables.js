@@ -34,9 +34,6 @@ class HashTable {
     }
     get (key) {
         let idx = this._hash(key);
-        if (this.keyMap[idx].length === 1) {
-            return this.keyMap[idx][0][1];
-        }
         if (this.keyMap[idx]) {
             for (let i = 0; i < this.keyMap[idx].length; i++) {
                 if (this.keyMap[idx][i][0] === key) {
