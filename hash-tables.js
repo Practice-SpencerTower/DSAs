@@ -34,19 +34,17 @@ class HashTable {
     }
     get (key) {
         let idx = this._hash(key);
-        let kvPair;
-        if (!this.keyMap[idx]) return undefined;
         if (this.keyMap[idx].length === 1) {
-            kvPair = this.keyMap[idx][0];
-        } else {
-            this.keyMap[idx].forEach(pair => {
-                if (pair[0] === key) {
-                    kvPair = pair;
-                }
-            });
+            return this.keyMap[idx][0][1];
         }
-        if (!kvPair) return undefined;
-        return kvPair;
+        if (this.keyMap[idx]) {
+            for (let i = 0; i < this.keyMap[idx].length; i++) {
+                if (this.keyMap[idx][i][0] === key) {
+                    return this.keyMap[idx][i][1];
+                }
+            }
+        }
+        return undefined;
     }
 }
 
@@ -54,6 +52,8 @@ let hashTable = new HashTable();
 console.log('HASH TABLE', hashTable.set(1, 'one'));
 console.log('HASH TABLE', hashTable.set(2, 'two'));
 console.log('HASH TABLE', hashTable.set(3, 'three'));
+console.log('HASH TABLE', hashTable.get(1));
+console.log('HASH TABLE', hashTable.get(3));
 console.log('HASH TABLE', hashTable.get(1));
 
 
