@@ -15,6 +15,7 @@
 1. [Binary Search Trees](binary-search-trees.md)
 1. [Graphs](graphs.md)
 1. [Binary Heaps](binary-heaps.md)
+1. [Hash Tables](hash-tables.md)
 
 ## AlgoExpert Notes
 
