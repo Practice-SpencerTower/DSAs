@@ -43,14 +43,45 @@ class HashTable {
         }
         return undefined;
     }
+    keys () {
+        let keys = [];
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if (this.keyMap[i]) {
+                for (let kvPair of this.keyMap[i]) {
+                    if (!keys.includes(kvPair[0])) {
+                        keys.push(kvPair[0]);
+                    }
+                }
+            }
+        }
+        return keys;
+    }
+    values () {
+        let vals = [];
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if (this.keyMap[i]) {
+                for (let kvPair of this.keyMap[i]) {
+                    if (!vals.includes(kvPair[1])) {
+                        vals.push(kvPair[1]);
+                    }
+                }
+            }
+        }
+        return vals;
+    }
 }
 
 let hashTable = new HashTable();
 console.log('HASH TABLE', hashTable.set(1, 'one'));
 console.log('HASH TABLE', hashTable.set(2, 'two'));
+console.log('HASH TABLE', hashTable.set(2, 'two'));
+console.log('HASH TABLE', hashTable.set(2, 'two'));
 console.log('HASH TABLE', hashTable.set(3, 'three'));
+console.log('HASH TABLE', hashTable.set(10000, 4));
 console.log('HASH TABLE', hashTable.get(1));
 console.log('HASH TABLE', hashTable.get(3));
 console.log('HASH TABLE', hashTable.get(1));
+console.log('VALUES', hashTable.values());
+console.log('KEYS', hashTable.keys());
 
 
