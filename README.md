@@ -13,9 +13,9 @@
 1. [Doubly Linked Lists](doubly-linked-lists.md)
 1. [Stacks & Queues](stacks-queues.md)
 1. [Binary Search Trees](binary-search-trees.md)
-1. [Graphs](graphs.md)
 1. [Binary Heaps](binary-heaps.md)
 1. [Hash Tables](hash-tables.md)
+1. [Graphs](graphs.md)
 
 ## AlgoExpert Notes
 

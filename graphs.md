@@ -2,9 +2,39 @@
 
 ## Notes: Javascript Algorithms and Data Structures Masterclass by Colt Steel
 
-## Graph Traversal
+- Graphs:
+  - Used everywhere
+  - Nodes with connections
+  - Connections do not have to be in a particular order/direction
+    - Can be multiple paths to get to a node
+  - Trees are a type of graph - but only have one path per node
 
-- It is important to understand how to visit every node via traversal before learning how to find a closest node in a graph
+- Graph types and terminology:
+  - Edge - connections between nodes
+  - Vertex - a node
+  - Directed graph - each edge has a direction assigned to it - can be one or both directions
+  - Undirected graphs - edges to not have directions assigned
+  - Weighted graph - each edge has a value/"weight" assigned to it
+  - Unweighted graph - edges do not have weights assigned
+
+- Use cases:
+  - Social networking
+  - Maps
+  - Recommendation systems
+
+- Adjacency Matrix:
+  - Nested arrays with rows and columns
+
+- Adjacency List:
+  - Uses an array/list to store edges
+  - Often a hash table / object is used to store the nodes with their adjacency lists
+  - Can take up less space than matrix, can look up edges faster, but can be slower than a matrix for looking up specific edges
+  - Real-world data tends to be sparse, so using an adjacency list makes more sense in that case
+  - Matrix makes sense to use when it is nearly full
+
+
+- Graph Traversal:
+  - It is important to understand how to visit every node via traversal before learning how to find a closest node in a graph
 
 ### Graph vs Tree Traversal
 
