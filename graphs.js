@@ -8,8 +8,6 @@ class Graph {
         if (!this.adjList[vertex]) this.adjList[vertex] = [];
     }
     addEdge (v1, v2) {
-        // find adjacency list of v1, push v2 to it
-        // find adjList of v2, push v1 to it
         this.adjList[v1].push(v2);
         this.adjList[v2].push(v1);
     }
