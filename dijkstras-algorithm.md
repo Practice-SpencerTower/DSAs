@@ -15,8 +15,11 @@
 
 - Steps:
   - Requires a weighted graph
-  - Visited array - stores visited nodes
-  - Previous object - stores previously visited nodes and their closest nodes
+  - Visited array
+    - Stores visited nodes
+  - Previous object
+    - Stores previously visited nodes and their closest nodes 
+    - Keeps track of the previous node in the path for each node
   - Data structure to hold vertices and their shortest distances from the starting node
     - Continuously updated when a new, shortest distance from the starting node is found
     - Update is reflected in the "Previous" object
