@@ -37,6 +37,21 @@ class Graph {
         traverse(start);
         return results;
     }
+    dfsIterative (start) {
+        let results = [];
+        let visited = {};
+        let stack = [];
+        stack.push(start);
+        while (stack.length) {
+            let vertex = stack.pop();
+            if (!visited[vertex]) {
+                results.push(vertex);
+                visited[vertex] = true;
+                this.adjList[vertex].forEach(neighbor => stack.push(neighbor));
+            }
+        }
+        return results;
+    }
 }
 
 let graph = new Graph();
@@ -48,6 +63,7 @@ graph.addEdge('Dallas', 'LA');
 graph.addEdge('LA', 'Tokyo');
 console.log('UPDATED GRAPH: ', graph);
 console.log('ADJACENCY LIST: ', graph.adjList);
-console.log('DALLAS DEPTH FIRST SEARCH: ', graph.dfsRecursive('Dallas'));
+console.log('RECURSIVE DFS RESULTS: ', graph.dfsRecursive('Dallas'));
+console.log('ITERATIVE DFS RESULTS: ', graph.dfsIterative('Dallas'));
 
 
