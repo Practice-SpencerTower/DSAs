@@ -52,18 +52,41 @@ class Graph {
         }
         return results;
     }
+    breadthFirst (start) {
+        let results = [];
+        let visited = {};
+        let queue = [start];
+        while (queue.length) {
+            let vertex = queue.shift();
+            if (!visited[vertex]) {
+                results.push(vertex);
+                visited[vertex] = true;
+                this.adjList[vertex].forEach(neighbor => {
+                    queue.push(neighbor);
+                })
+            }
+        }
+        return results;
+    }
 }
 
 let graph = new Graph();
-graph.addVertex('Dallas');
-graph.addVertex('Tokyo');
-graph.addVertex('LA');
-graph.addEdge('Tokyo', 'Dallas');
-graph.addEdge('Dallas', 'LA');
-graph.addEdge('LA', 'Tokyo');
+graph.addVertex("A")
+graph.addVertex("B")
+graph.addVertex("C")
+graph.addVertex("D")
+graph.addVertex("E")
+graph.addVertex("F")
+
+graph.addEdge("A", "B")
+graph.addEdge("A", "C")
+graph.addEdge("B","D")
+graph.addEdge("C","E")
+graph.addEdge("D","E")
+graph.addEdge("D","F")
+graph.addEdge("E","F")
 console.log('UPDATED GRAPH: ', graph);
 console.log('ADJACENCY LIST: ', graph.adjList);
-console.log('RECURSIVE DFS RESULTS: ', graph.dfsRecursive('Dallas'));
-console.log('ITERATIVE DFS RESULTS: ', graph.dfsIterative('Dallas'));
-
-
+console.log('RECURSIVE DFS RESULTS: ', graph.dfsRecursive('A'));
+console.log('ITERATIVE DFS RESULTS: ', graph.dfsIterative('A'));
+console.log('BFS RESULTS: ', graph.breadthFirst('A'));
