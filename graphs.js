@@ -21,6 +21,9 @@ class Graph {
         });
         delete this.adjList[vertex];
     }
+    dfsRecursive () {
+        
+    }
 }
 
 let graph = new Graph();
