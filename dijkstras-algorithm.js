@@ -36,37 +36,54 @@ class WeightedGraph {
         return weight;
     }
     dijkstras(start, end) {
-        let priorityQueue = new PriorityQueue();
+        let nodes = new PriorityQueue();
         let distances = {};
         let previous = {};
+        let shortest;
+        let path = []; // to return at end
         // set each key to be every vertex in adj list
-        Object.keys(this.adjList).forEach(vertex => {
-            // add vertices to distances and priority queue
+        for (let vertex in this.adjList) {
             if (vertex === start) {
                 distances[vertex] = 0;
-                priorityQueue[vertex] = 0;
+                nodes.enqueue(vertex, 0);
             } else {
                 distances[vertex] = Infinity;
-                priorityQueue[vertex] = Infinity;
+                nodes.enqueue(vertex, Infinity);
             };
             // add vertices with null value to previous
-            previous[vertex] = null;
-        });
-        // dequeue vertex from priority queue
-        let currVertex = priorityQueue.dequeue();
-        if (currVertex === end) {
-            return;
-        } else {
-            let distance = Infinity;
-            Object.values(currVertex.adjList).forEach(edge => {
-                if (edge.weight < distance) {
-                    priorityQueue.enqueue(edge, edge.weight);
-                }
-            });
+            previous[vertex] = null;        
         }
-        // console.log('PRIORITY QUEUE: ', priorityQueue);
+        // dequeue vertex from priority queue
+        while (nodes.values.length) {
+            shortest = nodes.dequeue().val;
+            if (shortest === end) {
+                // console.log('DISTANCES', distances);
+                // console.log('PREVIOUS', previous);
+                while (previous[shortest]) {
+                    path.push(shortest);
+                    shortest = previous[shortest];
+                }
+                break;
+            }
+            if (shortest || distances[shortest] !== Infinity) {
+                for (let neighbor in this.adjList[shortest]) {
+                    let nextNode = this.adjList[shortest][neighbor];
+                    console.log('NEXTNODE', nextNode);
+                    // calculate new distance to neighboring node
+                    let candidate = distances[shortest] + nextNode.weight;
+                    let nextNeighbor = nextNode.node;
+                    if (candidate < distances[nextNeighbor]) {
+                        distances[nextNeighbor] = candidate;
+                        previous[nextNeighbor] = shortest;
+                        // enqueue in priority queue with new priority
+                        nodes.enqueue(nextNeighbor, candidate);
+                    }
+                }
+            }
+        }
+        // console.log('PRIORITY QUEUE: ', nodes);
         console.log('DISTANCES: ', distances);
-
+        return path.concat(shortest).reverse();
     }
 }
 
@@ -88,6 +105,6 @@ graph.addEdge("D","E", 3);
 graph.addEdge("D","F", 1);
 graph.addEdge("E","F", 1);
 console.log(graph);
-// graph.dijkstras("A", "C");
-graph.getEdgeWeight("A", "C");
+console.log('SHORTEST PATH: ', graph.dijkstras("A", "F"));
+
 
