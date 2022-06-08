@@ -21,8 +21,21 @@ class Graph {
         });
         delete this.adjList[vertex];
     }
-    dfsRecursive () {
-        
+    // TRAVERSAL METHODS
+    dfsRecursive (start) {
+        let results = [];
+        let visited = {};
+        const adjList = this.adjList;
+        function traverse (vertex) {
+            if (!vertex) return; // base case
+            visited[vertex] = true;
+            results.push(vertex);
+            adjList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) traverse(neighbor);
+            });
+        }
+        traverse(start);
+        return results;
     }
 }
 
@@ -35,7 +48,6 @@ graph.addEdge('Dallas', 'LA');
 graph.addEdge('LA', 'Tokyo');
 console.log('UPDATED GRAPH: ', graph);
 console.log('ADJACENCY LIST: ', graph.adjList);
-graph.removeVertex('Dallas');
-console.log('UPDATED GRAPH: ', graph);
-console.log('ADJACENCY LIST: ', graph.adjList);
+console.log('DALLAS DEPTH FIRST SEARCH: ', graph.dfsRecursive('Dallas'));
+
 
