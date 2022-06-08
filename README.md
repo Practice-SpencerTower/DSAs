@@ -16,6 +16,7 @@
 1. [Binary Heaps](binary-heaps.md)
 1. [Hash Tables](hash-tables.md)
 1. [Graphs](graphs.md)
+1. [Dijkstra's Algorithm](dijkstras-algorithm.md)
 
 ## AlgoExpert Notes
 
