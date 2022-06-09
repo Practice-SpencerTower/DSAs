@@ -52,8 +52,20 @@ function fibMemoized(n, memo = []) {
 }
 ```
 
-- Tabulation: A Bottom Up Approach
+- Memoization: Top down approach to dynamic programming
+
+- Tabulation: A Bottom Up Approach to Dynamic Programming
   - Storing results in a "table" (an array)
   - Usually done with iteration
-  - Can have better space complexity than recursion
-  
+  - Better space complexity than recursion
+
+```JS
+function fibTabulated(n) {
+    if (n <= 2) return 1;
+    let fibNums = [0, 1, 1];
+    for (let i = 3; i <= n; i++) {
+      fibNums[i] = fibNums[i - 1] + fibNums[i - 2];
+    }
+    return fibNums[n];
+}
+```
