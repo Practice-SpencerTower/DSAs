@@ -59,6 +59,9 @@ function fibMemoized(n, memo = []) {
   - Usually done with iteration
   - Better space complexity than recursion
 
+- Both tabulated and memoized solutions have O(n) time complexity
+- The tabulated solution has better space complexity
+
 ```JS
 function fibTabulated(n) {
     if (n <= 2) return 1;
