@@ -3,6 +3,7 @@
 ## Notes: Javascript Algorithms and Data Structures Masterclass by Colt Steel
 
 - Recursion requires memory in the form of function calls on the call stack
+- 2 essential parts of a recursive function - base case and different input
 
 ## Common Recursion Pitfalls
 
