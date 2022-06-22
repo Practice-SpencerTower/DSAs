@@ -39,6 +39,7 @@
 
 ### Depth First Search
 
+- Go all the way to a leaf node before recursing back upwards
 - 3 types of DFS:
   - Recursive traversal is easiest approach
   - In-Order - traverse left side, root, right side

@@ -21,8 +21,8 @@ class Node {
 }
 class Stack {
     constructor() {
-        this.first = null;
-        this.last = null;
+        this.top = null;
+        this.bottom = null;
         this.length = 0;
     }
     push (val) {
@@ -30,11 +30,11 @@ class Stack {
         // faster with ll than push/pop
         let newNode = new Node(val);
         if (!this.length) {
-            this.first = newNode;
-            this.last = newNode;
+            this.top = newNode;
+            this.bottom = newNode;
         } else {
-            newNode.next = this.first;
-            this.first = newNode;
+            newNode.next = this.top;
+            this.top = newNode;
         }
         this.length++;
         return this;
@@ -42,12 +42,12 @@ class Stack {
     pop () {
         // behaves like shift
         if (!this.length) return undefined;
-        let removedNode = this.first;
-        this.first = this.first.next;
+        let removedNode = this.top;
+        this.top = this.top.next;
         removedNode.next = null;
         this.length--;
         if (!this.length) {
-            this.last = null;
+            this.bottom = null;
         }
         return removedNode;
     }
