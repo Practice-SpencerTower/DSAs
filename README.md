@@ -29,3 +29,4 @@
     1. [Decode String](code-challenges/strings/decode-string.md)
 1. [Arrays](code-challenges/arrays)
     1. [Minimum in Rotated Sorted Array](code-challenges/strings/min-in-rotated-sorted-array.md)
+    1. [Container With Most Water](code-challenges/strings/container-most-water.md)
