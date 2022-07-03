@@ -11,4 +11,3 @@
 - Once the pivot is placed, the same operations are then performed with elements to the left and of the pivot
   - Pick pivot, find place in array, sort the left and right sides of pivot
 - Easiest way to solve is through recursion
-

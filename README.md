@@ -25,4 +25,6 @@
 
 ## Code Challenge Notes
 
-1. 
+1. [Strings](code-challenges/strings)
+    1. [Decode String](code-challenges/strings/decode-string.md)
+    
