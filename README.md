@@ -30,3 +30,5 @@
 1. [Arrays](code-challenges/arrays)
     1. [Minimum in Rotated Sorted Array](code-challenges/strings/min-in-rotated-sorted-array.md)
     1. [Container With Most Water](code-challenges/strings/container-most-water.md)
+1. [Graphs](code-challenges/graphs)
+    1. [Pacific Atlantic Water Flow](code-challenges/graphs/pacific-atlantic-water-flow.md)
