@@ -32,3 +32,4 @@
     1. [Container With Most Water](code-challenges/strings/container-most-water.md)
 1. [Graphs](code-challenges/graphs)
     1. [Pacific Atlantic Water Flow](code-challenges/graphs/pacific-atlantic-water-flow.md)
+    1. [River Sizes](code-challenges/graphs/river-sizes.md)
