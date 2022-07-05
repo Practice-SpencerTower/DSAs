@@ -37,6 +37,7 @@
 1. [Graphs](code-challenges/graphs)
     1. [Pacific Atlantic Water Flow](code-challenges/graphs/pacific-atlantic-water-flow.md)
     1. [River Sizes](code-challenges/graphs/river-sizes.md)
+    1. [Remove Islands](code-challenges/graphs/remove-islands.md)
 1. [BSTs](code-challenges/binary-search-trees)
     1. [Validate BST](code-challenges/trees/validate-bst.md)
 1. [Dynamic Programming](code-challenges/dynamic-programming)
