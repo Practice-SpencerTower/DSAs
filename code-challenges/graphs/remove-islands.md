@@ -14,6 +14,9 @@
   - Skip if value is true in auxiliary matrix
 
 - Time Complexity: O(w * h)
+  - Guaranteed that function calls will never be more than w*h
+  - Time complexity is then 2w*h = w*h
+    - Never going to look at the same position multiple times
 - Space Complexity: O(w * h)
 
 - Alternative Solution:
@@ -26,3 +29,7 @@
 
 - Time Complexity: O(w * h)
 - Space Complexity: O(w * h) - still need space to perform DFS - have to use a stack to keep track of neighbors
+
+- Graph Notes:
+  - DFS = use stack
+  - BFs = use queue
