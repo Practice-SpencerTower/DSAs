@@ -36,3 +36,5 @@
     1. [River Sizes](code-challenges/graphs/river-sizes.md)
 1. [BSTs](code-challenges/binary-search-trees)
     1. [Validate BST](code-challenges/trees/validate-bst.md)
+1. [Dynamic Programming](code-challenges/dynamic-programming)
+    1. [Max Subset Sum No Adjacent](code-challenges/dynamic-programming/max-subset-sum.md)
