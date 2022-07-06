@@ -27,7 +27,7 @@
 
 1. [Strings](code-challenges/strings)
     1. [Decode String](code-challenges/strings/decode-string.md)
-    1. [Length Longest Substring]((code-challenges/strings/length-longest-substring.md)
+    1. [Length Longest Substring](code-challenges/strings/length-longest-substring.md)
 1. [Arrays](code-challenges/arrays)
     1. [Minimum in Rotated Sorted Array](code-challenges/arrays/min-in-rotated-sorted-array.md)
     1. [Container With Most Water](code-challenges/arrays/container-most-water.md)
@@ -35,6 +35,7 @@
     1. [Longest Consecutive Sequence](code-challenges/arrays/longest-consecutive-sequence.md)
     1. [Product of Array Except Self](code-challenges/arrays/product-of-array-except-self.md)
     1. [Maximum Product Subarray](code-challenges/arrays/maximum-product-subarray.md)
+    1. [Maximum Subarray](code-challenges/arrays/maximum-subarray.md)
 1. [Graphs](code-challenges/graphs)
     1. [Pacific Atlantic Water Flow](code-challenges/graphs/pacific-atlantic-water-flow.md)
     1. [River Sizes](code-challenges/graphs/river-sizes.md)
