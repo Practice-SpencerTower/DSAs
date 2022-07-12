@@ -1,4 +1,4 @@
-# Matrix
+# Graph / Matrix
 
 - Can treat a matrix like a graph in many cases
 - Each value as a node
