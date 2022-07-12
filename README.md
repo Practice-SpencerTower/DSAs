@@ -48,4 +48,3 @@
 1. [Linked Lists](code-challenges/linked-lists)
     1. [Reorder List](code-challenges/linked-lists/reorder-list.md)
 1. [Suffix Tries](suffix-tries.md)
-
