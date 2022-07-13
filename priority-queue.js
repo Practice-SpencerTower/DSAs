@@ -17,18 +17,6 @@ class PriorityQueue {
         this.vals.push(newNode);
         this.bubbleUp();
     }
-    bubbleUp () {
-        let idx = this.vals.length - 1; // point to last val
-        const element = this.vals[idx];
-        while (idx > 0) {
-            let parentIdx = Math.floor((idx - 1) / 2);
-            let parent = this.vals[parentIdx];
-            if (element.priority <= parent.priority) break;
-            this.vals[parentIdx] = element;
-            this.vals[idx] = parent;
-            idx = parentIdx;
-        }
-    }
     dequeue () {
         // swap first and last vals in vals prop (moves largest val to end so you can pop it off)
         const min = this.vals[0];
@@ -38,6 +26,18 @@ class PriorityQueue {
             this.sinkDown();
         }
         return min;
+    }
+    bubbleUp () {
+        const idx = this.vals.length - 1; // point to last idx
+        const element = this.vals[idx]; // get element at last index
+        while (idx > 0) {
+            const parentIdx = Math.floor((idx - 1) / 2);
+            const parentVal = this.vals[parentIdx];
+            if (element.priority <= parentVal.priority) break;
+            this.vals[parentIdx] = element;
+            this.vals[idx] = parentVal;
+            idx = parentIdx;
+        }
     }
     sinkDown () {
         let idx = 0;
@@ -76,5 +76,5 @@ let priorityQueue = new PriorityQueue();
 priorityQueue.enqueue("flu", 3);
 priorityQueue.enqueue("concussion", 1);
 priorityQueue.enqueue("High fever", 2);
-console.log(priorityQueue.dequeue());
 console.log(priorityQueue.vals);
+console.log(priorityQueue.dequeue());

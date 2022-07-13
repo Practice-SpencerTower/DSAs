@@ -55,7 +55,6 @@
 
 - Each element recieves a priority level
 - E.g. an emergency room queue
-- Highest priority becomes the room
 - Initially add the node to the end and then bubble up based on its priority level
 - Common use case for binary heaps
 - Independent from heaps - an abstract concept that can be implemented without a heap
