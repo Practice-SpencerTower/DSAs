@@ -47,4 +47,6 @@
     1. [Max Subset Sum No Adjacent](code-challenges/dynamic-programming/max-subset-sum.md)
 1. [Linked Lists](code-challenges/linked-lists)
     1. [Reorder List](code-challenges/linked-lists/reorder-list.md)
-1. [Suffix Tries](suffix-tries.md)
+1. [Tries]
+    1. [trie-suffix](trie-suffix.md)
+    1. [trie-prefix](trie-prefix.md)
