@@ -18,6 +18,9 @@
 1. [Graphs](graphs.md)
 1. [Dijkstra's Algorithm](dijkstras-algorithm.md)
 1. [Dynamic Programming](dynamic-programming.md)
+1. [Prefix Trie](trie-prefix.md)
+1. [Suffix Trie](trie-suffix.md)
+1. [NP Complete Problems](np-complete.md)
 
 ## AlgoExpert Notes
 

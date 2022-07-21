@@ -12,3 +12,11 @@
 
 - Searching function that can search for a string inside the suffix tree
   - Will tell us if a string is contained within the suffix tree
+
+- Searching:
+  - Time O(n)
+  - Space O(1)
+
+- Insertion:
+  - Time O(n^2)
+  - Space O(n^2)

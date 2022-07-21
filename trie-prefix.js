@@ -17,11 +17,11 @@ class Trie {
         for (let char of string) {
             if (!(char in node.children)) {
                 node.children[char] = new TrieNode(); // add character if doesnt exist
-            } else {
                 node = node.children[char]; // move to that character if already exists
             }
         }
         node.endOfWord = true; // mark last character as end of word
+        console.log(`${string} INSERTED`);
     }
     search(string) {
         let node = this.root;
@@ -46,4 +46,4 @@ class Trie {
 }
 
 const trie = new Trie().insert('apple');
-console.log(trie.search('apple'));
+console.log(trie.root);

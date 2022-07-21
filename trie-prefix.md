@@ -3,6 +3,8 @@
 Tries:
 
 - a special type of tree
+- useful for autocomplete and spellcheckers
+- allows you to reuse nodes - makes tree efficient for string lookup
 - root is a placeholder node - does not have a character
 - create a node for each letter starting at the root
   - for each character in the word
