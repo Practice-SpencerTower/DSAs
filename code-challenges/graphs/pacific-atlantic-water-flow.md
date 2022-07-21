@@ -1,8 +1,10 @@
 # Pacific Atlantic Water Flow
 
-- DFS each cell
-- Track visited cells
-- Move from ocean to cells
+- traverse from pacific and atlantic
+- look for nodes that can reach both the atlantic and pacific oceans
+- loop through from north, south borders
+- loop through from east, west borders
+- track visited nodes in sets for each ocean
 
-- define rows and columns
-- pacific and atlantic hashsets
+- loop through matrix
+- if node in both sets, add to results array
