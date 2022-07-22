@@ -2,8 +2,7 @@
 
 class TrieNode {
     constructor() {
-        this.children = {};
-        this.endOfWord = false;
+        this.root = {};
     }
 }
 
@@ -13,37 +12,29 @@ class Trie {
     }
 
     insert(string) {
-        let node = this.root;
-        for (let char of string) {
-            if (!(char in node.children)) {
-                node.children[char] = new TrieNode(); // add character if doesnt exist
-                node = node.children[char]; // move to that character if already exists
+        let current = this.root;
+        for (let letter of string) {
+            if (current[letter] === undefined) current[letter] = {};  // add character if doesnt exist
+            current = current[letter]; // move to that character if already exists
             }
-        }
-        node.endOfWord = true; // mark last character as end of word
-        console.log(`${string} INSERTED`);
+        current.endOfWord = true; // mark last character as end of word
     }
+
     search(string) {
-        let node = this.root;
-        for (let char of string) {
-            if (!(char in node.children)) {
-                return false; // word not in trie
-            }
-            node = node.children[char]; // go to next character
+        let current = this.root;
+        for (let letter of string) {
+            if (!current[letter]) return false; // word not in trie
+            current = current[letter]; // go to next character
         }
-        return node.endOfWord; // if last character is end, word exists in trie, returns true
+        return current && current.endOfWord === true; // if last character is end, word exists in trie, returns true
     }
+
     startsWith(prefix) {
-        let node = this.root;
-        for (let char of prefix) {
-            if (!(char in node.children)) {
-                return false; // word not in trie
-            }
-            node = node.children[char]; // go to next character
+        let current = this.root;
+        for (let letter of prefix) {
+            if (!current[letter]) return false; // word not in trie
+            current = current[letter]; // go to next character
         }
         return true; // return true if any word has the prefix
     }
 }
-
-const trie = new Trie().insert('apple');
-console.log(trie.root);
