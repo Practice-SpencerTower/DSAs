@@ -1,4 +1,4 @@
-// Lowest Common Ancestor
+// Lowest Common Ancestor of BST
 
 function lowestCommonAncestor(root, p, q) {
     let current = root;
