@@ -1,30 +1,16 @@
 // Validate BST
 
-class BST {
-    constructor(value) {
-      this.value = value;
-      this.left = null;
-      this.right = null;
-    }
-  }
-  
-  function validateBst(tree) {
-    // if (!tree) return false;
-    if (this.left) {
-      if (this.left.value >= this.value) {
-        return false;
-      } else {
-        validateBst(this.left);
-      }
-    }
-    if (this.right) {
-      if (this.right.value <= this.value) {
-        return false;
-      } else {
-        validateBst(this.right);
-      }
-    }
-    return true;
-  }
+function isValidBST(root) {
+  return validateNodes(root, -Infinity, Infinity);
+};
+
+function validateNodes(node, min, max) {
+  if (!node) return true;
+  if (!(node.value > min)) return false;
+  if (!(node.value < max)) return false;
+  const leftNodeValid = validateNodes(node.left, min, node.value);
+  const rightNodeValid = validateNodes(node.right, node.value, max);
+  return leftNodeValid && rightNodeValid;
+}
 
   
