@@ -1,7 +1,7 @@
 # Number of Connected Components in an Undirected Graph
 
 - Undirected edges
+- Track visited nodes
 - Loop through in for loop - accounts for isolated nodes
-- Track visited for current iteration
-- Remove from visited after each iteration
+- Dfs on unvisited nodes
 - Increment count after each dfs traversal
