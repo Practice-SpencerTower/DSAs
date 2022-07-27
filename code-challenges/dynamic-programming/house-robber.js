@@ -12,3 +12,18 @@ function houseRobber(nums) {
 }
 return Math.max(...maxProfit);
 }
+
+// O(n) Time | O(1) Space
+function houseRobber(nums) {
+	if (nums.length === 1) return nums[0];
+	// loop through nums, calculate max profit up to current house
+	let nonAdjHouse = nums[0];  // n - 2
+	let adjHouse = Math.max(nums[0], nums[1]);  // n - 1
+
+	for (let i = 2; i < nums.length; i++) {
+		let currProfit = Math.max(adjHouse, nonAdjHouse + nums[i]);
+		nonAdjHouse = adjHouse;
+		adjHouse = currProfit;
+}
+return adjHouse;
+}
