@@ -6,20 +6,19 @@ function connectedComponents(n, edges) {
 
 	for (let node = 0; node < n; node++) {
 		if (visited.has(node)) continue;
-visited.add(node);
-		dfs(node, edges, visited);
+        visited.add(node);
+		dfs(node, edges);
 		componentCount++;
-}
-
-function dfs(node, edges, visited) {
+    }
+    function dfs(node, edges) {
 		if (!node) return;
 		if (visited.has(node)) return;
 		visited.add(node);
 		edges[node].forEach(neighbor => {
-			dfs(neighbor, edges, visited);
-});
-return;
-}
-
+		dfs(neighbor, edges);
+        });
+    return;
+    }
+    
 return componentCount;
 }
