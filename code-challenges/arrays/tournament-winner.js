@@ -1,35 +1,26 @@
 // Tournament Wnner - AlgoExpert
 
 function tournamentWinner(competitions, results) {
-    const winners = {};
+    let highestScore = 0;
+    let tourneyWinner;
+    const scoresObj = {};
 
     for (let i = 0; i < results.length; i++) {
+        let winner;
         if (results[i] === 1) {
-            const teamScore = competitions[i][0];
-            if (winners[teamScore]) {
-                winners[teamScore] += 3;
-            } else {
-                winners[teamScore] = 3;
-            }
+            winner = competitions[i][0];
+        } else {
+            winner = competitions[i][1];
         }
-        if (results[i] === 0) {
-            const teamScore = competitions[i][1];
-            if (winners[teamScore]) {
-                winners[teamScore] += 3;
-            } else {
-                winners[teamScore] = 3;
-            }
+        if (scoresObj[winner]) {
+            scoresObj[winner]++;
+        } else {
+            scoresObj[winner] = 1;
+        }
+        if (scoresObj[winner] > highestScore) {
+            highestScore = scoresObj[winner];
+            tourneyWinner = winner;
         }
     }
-
-    // loop through winners and find highest score
-    let highScore = 0;
-    let winner;
-    for (const team in winners) {
-        if (winners[team] > highScore) {
-            highScore = winners[team];
-            winner = team;
-        }
-    }
-    return winner;
+    return tourneyWinner;
 }
