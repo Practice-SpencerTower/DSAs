@@ -41,3 +41,27 @@ function arrayOfProducts(array) {
     }
     return result;
 }
+
+// Updated Solution
+function arrayOfProducts(array) {
+    const leftProducts = new Array(array.length).fill(1);
+    const rightProducts = new Array(array.length).fill(1);
+    const result = new Array(array.length).fill(1);
+
+    let leftProduct = 1;
+    for (let i = 0; i < array.length; i++) {
+        leftProducts[i] = leftProduct;
+        leftProduct *= array[i];
+    }
+
+    let rightProduct = 1;
+    for (let i = array.length - 1; i >= 0; i--) {
+        rightProducts[i] = rightProduct;
+        rightProduct *= array[i];
+    }
+
+    for (i = 0; i < array.length; i++) {
+        result[i] = leftProducts[i] * rightProducts[i];
+    }
+    return result;
+}
