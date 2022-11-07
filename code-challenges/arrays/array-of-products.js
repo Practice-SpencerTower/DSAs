@@ -5,12 +5,14 @@ function arrayOfProducts(array) {
     // two arrays of products
     // one array contains the products from left to right
     // one array contains the products from right to left
+    // remember to fill array from right to left
 
     // loop through input array
     // for each value, grab value to left of that index in left array, product to right of that
     // index in right array
     // multiply the two products
     // push the value to the output array at the same index
+    
 
     const leftToRightProducts = [];
     const rightToLeftProducts = [];
