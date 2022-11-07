@@ -32,3 +32,8 @@ function trackPeak(i, array) {
     // return count if decline found, else reset count to 0
     return decline ? [i - 1, count] : [i - 1, 0];
 }
+
+// Alt Solution
+
+// find peaks
+// use two pointers to find length of peak to right and left
