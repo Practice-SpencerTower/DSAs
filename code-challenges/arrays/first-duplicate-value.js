@@ -1,5 +1,17 @@
 // First Duplicate Value - AlgoExpert
 
+// O(n) Time | O(n) Space
+function firstDuplicateValue(array) {
+    const visited = new Set();
+
+    for (let i = 0; i < array.length; i++) {
+        const num = array[i];
+        if (visited.has(num)) return num;
+        visited.add(num);
+    }
+    return -1;
+}
+
 // Updated solution - O(n) Time | O(n) Space
 function firstDuplicateValue(array) {
     // use object to track duplicates
