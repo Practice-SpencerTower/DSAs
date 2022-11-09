@@ -1,6 +1,29 @@
 // First Duplicate Value - AlgoExpert
 
-// Initial solution
+// Updated solution - O(n) Time | O(n) Space
+function firstDuplicateValue(array) {
+    // use object to track duplicates
+    // track min duplicate index
+    // if duplicate found, update min index
+
+    const numObj = {};
+    let minIdx = Infinity;
+
+    for (let i = 0; i < array.length; i++) {
+        const num = array[i];
+        if (numObj[num]) {
+            if (numObj[num] === 'first') {
+                numObj[num] = 'duplicate';
+                i < minIdx ? (minIdx = i) : null;
+            }
+        } else {
+            numObj[num] = 'first';
+        }
+    }
+    return minIdx === Infinity ? -1 : array[minIdx];
+}
+
+// Initial solution - brute force
 function firstDuplicateValue(array) {
     const numObj = {};
     const numSet = new Set();
