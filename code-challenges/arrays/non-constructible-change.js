@@ -1,5 +1,9 @@
 // Non Constructible Change - AlgoExpert
 
+// Sort coins
+// If current coin is greater than sum of all previous coins + 1,
+// return sum of previous coins + 1
+
 function nonConstructibleChange(coins) {
     coins.sort((a, b) => a - b);
 
