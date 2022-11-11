@@ -1,6 +1,6 @@
 // First Duplicate Value - AlgoExpert
 
-// O(n) Time | O(n) Space
+// Using a set - O(n) Time | O(n) Space
 function firstDuplicateValue(array) {
     const visited = new Set();
 
@@ -17,7 +17,6 @@ function firstDuplicateValue(array) {
     // use object to track duplicates
     // track min duplicate index
     // if duplicate found, update min index
-
     const numObj = {};
     let minIdx = Infinity;
 
