@@ -10,3 +10,23 @@
 // determine letter at that number in alphabet
 // add new letter to output string
 // use charCodeAt and fromCharCode to convert letters to/from keycodes
+
+function caesarCipherEncryptor(string, key) {
+    const newString = [];
+    for (let i = 0; i < string.length; i++) {
+        // get num of letter
+        let position = string[i].charCodeAt();
+        // if key is greater than 26
+        const newKey = key % 26;
+        // add key
+        position += newKey;
+        // if outside range of alphabet, modulus to keep in range
+        if (position > 122) {
+            position = position - 26;
+        }
+        // determine letter at new position
+        const newLetter = String.fromCharCode(position);
+        newString.push(newLetter);
+    }
+    return newString.join('');
+}
