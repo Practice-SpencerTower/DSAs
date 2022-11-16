@@ -24,3 +24,30 @@ function mergeOverlappingIntervals(array) {
     }
     return mergedIntervals;
 }
+
+function mergeOverlappingIntervals(array) {
+    const mergedIntervals = [];
+    // sort input intervals
+    array.sort((a, b) => a[0] - b[0]);
+
+    mergedIntervals.push(array[0]);
+
+    for (let i = 0; i < array.length; i++) {
+        // get start and end of last merged interval
+        const mergedStart = mergedIntervals[mergedIntervals.length - 1][0];
+        const mergedEnd = mergedIntervals[mergedIntervals.length - 1][1];
+        // get current start and end of current input interval
+        const currStart = array[i][0];
+        const currEnd = array[i][1];
+
+        if (mergedEnd >= currEnd) {
+            continue;
+        } else if (mergedEnd >= currStart) {
+            const mergedInterval = [mergedStart, currEnd];
+            mergedIntervals[mergedIntervals.length - 1] = mergedInterval;
+        } else {
+            mergedIntervals.push([currStart, currEnd]);
+        }
+    }
+    return mergedIntervals;
+}
