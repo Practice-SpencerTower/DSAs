@@ -25,6 +25,15 @@ function mergeOverlappingIntervals(array) {
     return mergedIntervals;
 }
 
+// sort intervals by starting times
+// use auxiliary array for output intervals - initiate with first interval
+// loop through input intervals
+// compare auxilary intervals to input intervals
+// check if ending int greater or equal to end of merged interval
+// if so, keep merged intervals array the same, skip to next interval comparison
+// compare if ending int is greater than or equal to end of second interval
+// if so, merge intervals and push to merged intervals array
+
 function mergeOverlappingIntervals(array) {
     const mergedIntervals = [];
     // sort input intervals
