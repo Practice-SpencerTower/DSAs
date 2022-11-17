@@ -1,6 +1,7 @@
 // Non Constructible Change - AlgoExpert
 
 // Sort coins
+// Keep sum of coins
 // If current coin is greater than sum of all previous coins + 1,
 // return sum of previous coins + 1
 
