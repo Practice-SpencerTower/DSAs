@@ -2,7 +2,7 @@
 function firstNonRepeatingCharacter(string) {
     // use object
     // loop through, count number of occurances of each character
-    // loop through object, return first one that has 1 occurance
+    // loop through string, check each chars count in object, return first char in object one that has 1 occurance
     const charCountObj = {};
 
     for (const char of string) {
@@ -13,19 +13,9 @@ function firstNonRepeatingCharacter(string) {
         }
     }
 
-    const keys = Object.keys(charCountObj);
-
-    let firstNonRepChar;
-    for (let i = 0; i < keys.length; i++) {
-        const key = keys[i];
-        if (charCountObj[key] === 1) {
-            firstNonRepChar = key;
-            break;
-        }
-    }
-
     for (let i = 0; i < string.length; i++) {
-        if (string[i] === firstNonRepChar) return i;
+        const char = string[i];
+        if (charCountObj[char] === 1) return i;
     }
     return -1;
 }
