@@ -4,6 +4,7 @@ function longestPalindromicSubstring(string) {
     // loop through string
     // check the two types of palindromes - even and odd
     // separate function to check if palindrome
+    // check starting at the center of each potential palindrome
     let longest = [0, 1];
     for (let i = 1; i < string.length; i++) {
       const oddPalin = isPalindrome(string, i - 1, i + 1);
