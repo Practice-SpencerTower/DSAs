@@ -1,7 +1,23 @@
 // Semordnilap - AlgoExpert
 
+function semordnilap(words) {
+    const pairs = [];
+    const set = new Set(words);
+
+    for (const word of words) {
+        const reverse = word.split('').reverse().join('');
+        // check for strings such as 'aaa'
+        if (set.has(reverse) && word !== reverse) {
+            pairs.push([word, reverse]);
+            set.delete(word);
+            set.delete(reverse);
+        }
+    }
+    return pairs;
+}
+
 // Brute force
-function reverse(words) {
+function semordnilap(words) {
     // list of unique strings
     // return list of "reverse pairs"
     // a set of different strings where reverse of one word is the same as the forward of the other
