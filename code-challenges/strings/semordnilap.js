@@ -1,3 +1,6 @@
+// Semordnilap - AlgoExpert
+
+// Brute force
 function semordnilap(words) {
     // list of unique strings
     // return list of "semordnilap pairs"
@@ -12,7 +15,6 @@ function semordnilap(words) {
     for (const word of words) {
         set.add(word);
     }
-    console.log(set);
 
     for (const word of words) {
         const semordinlap = checkSemordnilap(word);
