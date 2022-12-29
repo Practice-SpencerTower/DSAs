@@ -3,7 +3,7 @@
 // Brute force
 function semordnilap(words) {
     // list of unique strings
-    // return list of "semordnilap pairs"
+    // return list of "reverse pairs"
     // a set of different strings where reverse of one word is the same as the forward of the other
 
     // loop through array
@@ -18,7 +18,6 @@ function semordnilap(words) {
 
     for (const word of words) {
         const semordinlap = checkSemordnilap(word);
-        console.log(semordinlap);
         if (set.has(semordinlap)) {
             pairs.push([word, semordinlap]);
             set.delete(word);
