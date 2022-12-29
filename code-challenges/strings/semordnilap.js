@@ -1,7 +1,7 @@
 // Semordnilap - AlgoExpert
 
 // Brute force
-function semordnilap(words) {
+function reverse(words) {
     // list of unique strings
     // return list of "reverse pairs"
     // a set of different strings where reverse of one word is the same as the forward of the other
@@ -17,16 +17,16 @@ function semordnilap(words) {
     }
 
     for (const word of words) {
-        const semordinlap = checkSemordnilap(word);
-        if (set.has(semordinlap)) {
-            pairs.push([word, semordinlap]);
+        const reverse = checkReverse(word);
+        if (set.has(reverse)) {
+            pairs.push([word, reverse]);
             set.delete(word);
         }
     }
     return pairs;
 }
 
-function checkSemordnilap(word) {
+function checkReverse(word) {
     const reverseWordArr = [];
     for (let i = word.length - 1; i >= 0; i--) {
         reverseWordArr.push(word[i]);
