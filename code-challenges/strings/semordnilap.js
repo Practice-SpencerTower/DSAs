@@ -1,5 +1,6 @@
 // Semordnilap - AlgoExpert
 
+// O(n * m) Time | O(n * m) Space
 function semordnilap(words) {
     const pairs = [];
     const set = new Set(words);
