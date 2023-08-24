@@ -24,7 +24,7 @@ console.log(
 // loop through, check if num in set
 // if in set, return true, if not in set, add to set
 function containsDuplicate2(nums) {
-    const set = new Set([]);
+    const set = new Set();
     for (let i = 0; i < nums.length; i++) {
         const num = nums[i];
         if (set.has(num)) return true;
