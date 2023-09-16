@@ -15,18 +15,19 @@ function twoNumberSum(array, targetSum) {
 }
 
 function twoSum(nums, target) {
-    // using an object
-    const numObj = {};
+    // using object
+    const obj = {};
+    // for diff of number and target
     let diff;
-    // find difference of current element and target
-    // check if difference in object
-    // make sure not same index as current element
+    // make object: key = num, value = index
+    for (let i = 0; i < nums.length; i++) {
+        obj[nums[i]] = i;
+    }
+    // check if difference between target and current value is in object
     for (let i = 0; i < nums.length; i++) {
         diff = target - nums[i];
-        if (diff in numObj && numObj[diff] !== i) {
-            return [i, numObj[diff]];
+        if (obj[diff] && i !== obj[diff]) {
+            return [i, obj[diff]];
         }
-        // add current element to object, key = element, value = index
-        numObj[nums[i]] = i;
     }
 }
